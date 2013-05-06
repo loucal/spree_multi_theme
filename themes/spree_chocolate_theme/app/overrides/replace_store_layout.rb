@@ -9,12 +9,12 @@ Deface::Override.new(:virtual_path => %q{spree/layouts/spree_application},
       <ul>
                   <li><%= link_to "Home", root_url() %></li>
                   <li class="cart-detail"><%= link_to_cart %></li>
-                  <% if current_user%>
+                  <% if spree_current_user%>
                   <li class=<%=link_to_cart.empty? ? "hide_cart" : "" %>><a href="/account">My Account</a></li>
                   <%else%>
                   <li class=<%=link_to_cart.empty? ? "hide_cart" : "" %>><a href="/signup">Register</a></li>
                   <%end%>
-                  <% if current_user%>
+                  <% if spree_current_user%>
                   <li>&nbsp;<a href="/user/logout">Logout</a></li>
                   <%else%>
                   <li>&nbsp;<a href="/login">Log In</a></li>
